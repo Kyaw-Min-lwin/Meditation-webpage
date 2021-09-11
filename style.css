@@ -5,7 +5,6 @@
 }
 
 body {
-    background-color: aqua;
     display: flex;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
@@ -16,10 +15,12 @@ img {
     max-width: 100%;
 }
 
-video {
+.video-container {
     position: fixed;
-    width: 100%;
-    min-height: 100%;
+    right: 0;
+    bottom: -10px;
+    min-width: 100%;
+    min-height: 100vh;
     z-index: -20;
 }
 
@@ -42,7 +43,7 @@ video {
     transition: 0.5s all ease-in;
 }
 
-.time-container button:hover {
+.time-container button:hover, .time-container button:active {
     background-color: white;
     color: black;
     border-color: black;
@@ -57,36 +58,108 @@ video {
 }
 
 .play-btn {
-    background-color: transparent;
-    padding: 5rem 5rem 5rem 5.8rem;
+    padding: 2.6rem;
     border: 10px solid black;
-    margin-bottom: 2rem;
+    margin: 4rem 0rem 2rem;
     border-radius: 50%;
     cursor: pointer;
     background-color: crimson;
-    transition: 0.3s background ease-in;
+    transition: 0.3s all ease-in;
 }
 
 .play-btn:hover {
     background-color: hsl(348, 83%, 70%);
+    /* width: 40%; */
+}
+
+.play-btn img {
+    width: 60px;
 }
 
 .replay-btn {
     background-color: transparent;
-    width: 5%;
     border: none;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .replay-btn img {
-    width: 100%;
+    width: 35px;
+    transition: 0.2s width ease-in;
+}
+
+.replay-btn img:hover {
+    width: 38px;
 }
 
 .time-left {
     margin-top: 1rem;
-    /* background-color: black; */
     color: white;
     font-size: 3rem;
     padding: 1rem 3rem;
+}
+
+.change-music-container img {
+    width: 150px;
+    border-radius: 50%;
+    padding: 2rem;
+    background-color: hsl(219, 100%, 50%);
+    cursor: pointer;
+    transition: 0.2s width ease-in;
+}
+
+.change-music-container img:hover {
+    width: 160px;
+}
+
+.change-music-container :nth-child(2) {
+    background-color: tomato;
+}
+
+@media (max-width:650px) {
+    body {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .time-container, .player-container, .change-music-container {
+        width: 100%;
+        flex-direction: row;
+    }
+    .time-container button {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+    .play-btn {
+        padding: 2rem;
+        border-width: 7px;
+        margin: 0;
+        order: 1;
+    }
+    .player-container {
+        justify-content: space-evenly;
+    }
+    .play-btn img {
+        width: 30px;
+    }
+    .time-left {
+        order: 2;
+        margin: 0;
+        padding: 0;
+    }
+    .replay-btn {
+        order: 3;
+    }
+    .replay-btn img {
+        width: 28px;
+    }
+    .replay-btn img:hover {
+        width: 31px;
+    }
+    .change-music-container img {
+        width: 100px;
+    }
+    .change-music-container img:hover {
+        width: 110px;
+    }
 }
