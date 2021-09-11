@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+    display: flex;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+video {
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    z-index: -20;
+}
+
+.time-container, .change-music-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.time-container button {
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s all ease-in;
+}
+
+.time-container button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.player-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-btn {
+    background-color: transparent;
+    padding: 5rem 5rem 5rem 5.8rem;
+    border: 10px solid black;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: crimson;
+    transition: 0.3s background ease-in;
+}
+
+.play-btn:hover {
+    background-color: hsl(348, 83%, 70%);
+}
+
+.replay-btn {
+    background-color: transparent;
+    width: 5%;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.replay-btn img {
+    width: 100%;
+}
+
+.time-left {
+    margin-top: 1rem;
+    /* background-color: black; */
+    color: white;
+    font-size: 3rem;
+    padding: 1rem 3rem;
+}

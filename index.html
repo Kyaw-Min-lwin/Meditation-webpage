@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meditate</title>
+  <!-- css and js-->
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+
+  <div class="video-container">
+    <video loop>
+      <source src="./video/rain.mp4" type="video/mp4" />
+      <p>Sorry, your browser doesn't support embedded videos.</p>
+    </video>
+  </div>
+
+  <div class="time-container">
+    <button>2 minutes</button>
+    <button>5 minutes</button>
+    <button>10 minutes</button>
+  </div>
+
+  <div class="player-container">
+    <button class="play-btn"><img src="./svg/play.svg" alt="play" /></button>
+    <button class="replay-btn"><img src="./svg/replay.svg" alt="replay" /></button>
+    <p class="time-left">0:00</p>
+  </div>
+
+  <div class="change-music-container">
+    <img src="./svg/rain.svg" alt="rain" />
+    <img src="./svg/beach.svg" alt="beach" />
+  </div>
+
+</body>
+
+</html>
