@@ -15,16 +15,19 @@
 
 <body>
   <div class="video-container">
-    <video loop autoplay>
+    <audio loop>
+      <source src="./sounds/rain.mp3">
+    </audio>
+    <video loop>
       <source src="./video/rain.mp4" type="video/mp4" />
       <p>Sorry, your browser doesn't support embedded videos.</p>
     </video>
   </div>
 
   <div class="time-container">
-    <button>2 minutes</button>
-    <button>5 minutes</button>
-    <button>10 minutes</button>
+    <button data-time="120" class="time">2 minutes</button>
+    <button data-time="300" class="time">5 minutes</button>
+    <button data-time="600" class="time">10 minutes</button>
   </div>
 
   <div class="player-container">
@@ -34,8 +37,8 @@
   </div>
 
   <div class="change-music-container">
-    <img src="./svg/rain.svg" alt="rain" />
-    <img src="./svg/beach.svg" alt="beach" />
+    <img src="./svg/rain.svg" alt="rain" class="rain" />
+    <img src="./svg/beach.svg" alt="beach" class="beach" />
   </div>
 
 </body>
