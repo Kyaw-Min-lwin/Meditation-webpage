@@ -25,9 +25,9 @@ img {
     z-index: -20;
 }
 
-.beach-vid {
+/* .beach-vid {
     object-fit: cover;
-}
+} */
 
 .time-container, .change-music-container {
     width: 30%;
