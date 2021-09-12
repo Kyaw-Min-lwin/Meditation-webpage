@@ -4,7 +4,6 @@ let userSelectTime = document.querySelectorAll('.time');
 userSelectTime.forEach(time => [
     time.addEventListener('click', () => {
         timeToCountDown = time.dataset.time;
-        console.log(timeToCountDown);
     })
 ])
 
@@ -13,7 +12,6 @@ let video = document.querySelector('video');
 let audio = document.querySelector('audio');
 let playBtn = document.querySelector('.play-btn');
 let playImg = document.querySelector('.play-btn img');
-console.log(playImg);
 playBtn.addEventListener('click', () => {
     if (video.paused) {
         video.play();
@@ -36,8 +34,7 @@ beach.addEventListener('click', () => {
         video.src = './video/beach.mp4';
         audio.src = './sounds/beach.mp3';
         playImg.src = './svg/play.png';
-        // document.querySelector('.video-container').classList.add('beach-vid');
-        video.classList.add('beach-vid');
+        darken();
     }
 })
 
@@ -46,8 +43,7 @@ rain.addEventListener('click', () => {
         video.src = './video/rain.mp4';
         audio.src = './sounds/rain.mp3';
         playImg.src = './svg/play.png';
-        // document.querySelector('.video-container').classList.remove('beach-vid');
-        video.classList.remove('beach-vid');
+        darken();
     }
 })
 
@@ -60,3 +56,9 @@ replayBtn.addEventListener('click', () => {
     audio.play();
     playImg.src = './svg/pause.png';
 })
+
+function darken() {
+    document.querySelectorAll('.time').forEach(time => {
+        time.classList.toggle('darken');
+    });
+}

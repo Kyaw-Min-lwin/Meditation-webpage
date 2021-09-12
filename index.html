@@ -16,10 +16,9 @@
 <body>
   <div class="video-container">
     <audio loop>
-      <source src="./sounds/rain.mp3">
+      <source src="./sounds/rain.mp3" />
     </audio>
-    <video loop>
-      <source src="./video/rain.mp4" type="video/mp4" />
+    <video loop src="./video/rain.mp4">
       <p>Sorry, your browser doesn't support embedded videos.</p>
     </video>
   </div>
@@ -31,8 +30,12 @@
   </div>
 
   <div class="player-container">
-    <button class="play-btn"><img src="./svg/play.png" alt="play" /></button>
-    <button class="replay-btn"><img src="./svg/replay.png" alt="replay" /></button>
+    <button class="play-btn">
+      <img src="./svg/play.png" alt="play" />
+    </button>
+    <button class="replay-btn">
+      <img src="./svg/replay.png" alt="replay" />
+    </button>
     <p class="time-left">0:00</p>
   </div>
 
@@ -40,7 +43,6 @@
     <img src="./svg/rain.svg" alt="rain" class="rain" />
     <img src="./svg/beach.svg" alt="beach" class="beach" />
   </div>
-
 </body>
 
 </html>

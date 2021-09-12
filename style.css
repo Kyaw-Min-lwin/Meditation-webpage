@@ -9,6 +9,7 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 img {
@@ -19,15 +20,25 @@ img {
 .video-container {
     position: fixed;
     right: 0;
-    bottom: -10px;
+    bottom: 0px;
     min-width: 100%;
     min-height: 100vh;
     z-index: -20;
 }
 
-/* .beach-vid {
-    object-fit: cover;
-} */
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
+}
 
 .time-container, .change-music-container {
     width: 30%;
@@ -37,10 +48,10 @@ img {
     align-items: center;
 }
 
-.time-container button {
+.time {
     background-color: transparent;
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding: 1rem 2rem;
     border: 2px solid white;
     border-radius: 5px;
@@ -52,6 +63,12 @@ img {
     background-color: white;
     color: black;
     border-color: black;
+}
+
+.darken {
+    /* color: rgb(8, 243, 8); */
+    background-color: black;
+    /* border-color: rgb(8, 243, 8); */
 }
 
 .player-container {
