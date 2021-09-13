@@ -73,7 +73,7 @@ function countDown() {
 			if (timeToCountDown < 0) {
 				stopVideo();
 				clearInterval(intervalId);
-				timeToCountDown = 120;
+				timeToCountDown = copyOfTime;
 				countDown();
 				isPaused = true;
 			}
