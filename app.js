@@ -1,4 +1,4 @@
-// the video n audio that is gonna play
+// the video n audio that are gonna play
 let video = document.querySelector("video");
 let audio = document.querySelector("audio");
 
@@ -6,22 +6,26 @@ let audio = document.querySelector("audio");
 let timeLeftDisplay = document.querySelector(".time-left");
 
 // getting the time to meditate
-let timeToCountDown = 120;
+let timeToCountDown = 120, copyOfTime;
 let isPaused = true;
-// timeToCountDown = 2;
 let userSelectTime = document.querySelectorAll(".time");
 userSelectTime.forEach((time) => [
 	time.addEventListener("click", () => {
 		timeToCountDown = time.dataset.time;
+		copyOfTime = timeToCountDown;
 		timeLeftDisplay.textContent = getTime(timeToCountDown);
 	}),
 ]);
 
-//play btn [perfect]
+//play btn 
 let playBtn = document.querySelector(".play-btn");
 let playImg = document.querySelector(".play-btn img");
 playBtn.addEventListener("click", () => {
 	if (video.paused && timeToCountDown > 0) {
+		if (timeToCountDown <= 0) {
+			timeToCountDown = 120;
+			countDown();
+		}
 		isPaused = false;
 		playVideo();
 	} else {
@@ -62,7 +66,6 @@ function darken() {
 
 //countdown
 function countDown() {
-	console.log("yes");
 	let intervalId = setInterval(function () {
 		if (isPaused === false) {
 			timeLeftDisplay.textContent = getTime(timeToCountDown);
@@ -70,6 +73,9 @@ function countDown() {
 			if (timeToCountDown < 0) {
 				stopVideo();
 				clearInterval(intervalId);
+				timeToCountDown = 120;
+				countDown();
+				isPaused = true;
 			}
 		}
 	}, 1000);
@@ -87,15 +93,21 @@ function playVideo() {
 	video.play();
 	audio.play();
 }
-//replay btn [perfect]
+//replay btn 
 let replayBtn = document.querySelector(".replay-btn");
 replayBtn.addEventListener("click", () => {
 	video.currentTime = 0;
 	audio.currentTime = 0;
 	playVideo();
 	isPaused = false;
-	timeToCountDown = 4;
-	timeLeftDisplay.textContent = getTime(timeToCountDown);
+	if (timeToCountDown < 0) {
+		timeToCountDown = 120;
+		timeLeftDisplay.textContent = getTime(timeToCountDown);
+		countDown();
+	}
+	else {
+		timeToCountDown = copyOfTime;
+	}
 
 });
 
