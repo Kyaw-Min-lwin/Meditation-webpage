@@ -6,7 +6,7 @@ let audio = document.querySelector("audio");
 let timeLeftDisplay = document.querySelector(".time-left");
 
 // getting the time to meditate
-let timeToCountDown = 120, copyOfTime;
+let timeToCountDown = 120, copyOfTime = 120;
 let isPaused = true;
 let userSelectTime = document.querySelectorAll(".time");
 userSelectTime.forEach((time) => [
