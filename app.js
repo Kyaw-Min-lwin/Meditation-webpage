@@ -101,7 +101,7 @@ replayBtn.addEventListener("click", () => {
 	playVideo();
 	isPaused = false;
 	if (timeToCountDown < 0) {
-		timeToCountDown = copyOfTime;
+		timeToCountDown = 120;
 		timeLeftDisplay.textContent = getTime(timeToCountDown);
 		countDown();
 	}
