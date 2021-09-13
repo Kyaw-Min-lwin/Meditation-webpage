@@ -23,7 +23,7 @@ let playImg = document.querySelector(".play-btn img");
 playBtn.addEventListener("click", () => {
 	if (video.paused && timeToCountDown > 0) {
 		if (timeToCountDown <= 0) {
-			timeToCountDown = 120;
+			timeToCountDown = copyOfTime;
 			countDown();
 		}
 		isPaused = false;
